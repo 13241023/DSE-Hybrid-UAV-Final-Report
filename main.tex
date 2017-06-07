@@ -1,0 +1,90 @@
+\input{style.cls}
+
+%Document
+\begin{document}  
+\includepdf[pages={1}]{title.pdf}
+\setlength{\parindent}{0cm} % No indent
+
+%A blank page for printed versions
+\input{blankpage}
+%Inner Title Page
+\input{coverpage}
+%A blank page for printed versions
+\input{blankpage}
+
+%Document Part I:
+\begingroup
+\pagenumbering{roman} % Roman numbering
+    
+    %Summary
+    \input{Preface}
+    \input{summary} % Summary
+    \addcontentsline{toc}{chapter}{Preface}
+    \addcontentsline{toc}{chapter}{Summary} % Adding the Summary to the ToC
+
+    %Table of Contents
+    \setcounter{tocdepth}{1}
+    \renewcommand{\contentsname}{Table of Contents}
+    \tableofcontents
+    \thispagestyle{empty}
+
+    \clearpage
+
+    %List of Symbols
+    \printnomenclature[50pt]
+    \addcontentsline{toc}{chapter}{List of Symbols}
+
+    %List of Figures
+    %\listoffigures
+    %\addcontentsline{toc}{chapter}{List of Figures}
+
+    %List of Tables
+    %\listoftables
+    %\addcontentsline{toc}{chapter}{List of Tables}
+\endgroup
+\clearpage
+
+%Document Part II:
+\begingroup
+\pagenumbering{arabic}
+
+    %\input{SAMPLE/introductionsample} this is a sample chapter 
+    \input{introduction}
+    \input{ProjectDescription/proj_desc}
+    \input{ProjectApproach/proj_appr}
+    \input{Budget/budget}
+    \input{MarketStakeholderAnalysis/mark_anal}
+    \input{TechnicalRequirements/tech_requ}
+    \input{ConceptTradeOff/conc_trad}
+    \input{SystemDescription/syst_desc}
+    \input{PowerPropulsion/powe_prop}
+    \input{AvionicsGroundHandling/avio_grou_hand}
+    \input{WingTail/wing_tail}
+    \input{FuselagePayload/fuse_payl}
+    \input{LayoutConfiguration/layo_conf}
+    \input{Characteristics/char}
+    \input{OperationsLogistics/oper_logi}
+    \input{ComplianceMatrix/comp_matr}
+    \input{Production/prod}
+
+    %Conclusion
+    \input{conclusion}
+    
+    
+    %References:
+    \begingroup %Creates Separate Group from the Report
+    \raggedright %Removes Justification
+    %\nocite{*} %Disables biblatex from checking if all references are cited in-text DO NOT UN-COMMENT UNLESS ERROR CHECKING!
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\BibliographyName}
+    \printbibliography[title={\BibliographyName}] %Rename Bibliography (Default) to \BiblographyName defined in style.cls
+    \endgroup
+
+    
+    %Appendices:
+    \begin{appendices}
+    \input{Appendices/Appendix}
+    \end{appendices}
+\endgroup
+\end{document}
