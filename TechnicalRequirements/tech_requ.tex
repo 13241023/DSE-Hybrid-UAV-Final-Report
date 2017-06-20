@@ -1,3 +1,154 @@
-\chapter{Technical Requirements}
+\chapter{System Requirements}
 \setlength{\parindent}{15pt}
 \label{ch:tech_requ}
+
+System requirements describe the system in terms of constraints and functions, and they guide the design such that the final product meets the expectations of the stakeholders. Therefore they allow to gain insight into the basis for the design choices that have been made so far.
+
+This chapter presents the system requirements for the Hybrid UAV. The requirement coding is explained in \autoref{sec:lege} and the requirements themselves are listed in \autoref{sec:requ}. At the end of this section, requirements which currently make it impossible to complete the project within the set constraints are mentioned, and their revision is briefly justified.
+
+\section{Legend}
+\label{sec:lege}
+
+\autoref{tab:lege} presents the legend explaining the meaning of the requirement coding.
+
+\begin{table}[h]
+\centering
+\caption{Requirements Coding Legend}
+\label{tab:lege}
+\begin{tabular}{ll}
+\toprule
+\textbf{Requirement Code} & \textbf{Related to:}                       \\\midrule
+SYS                       & System                                         \\\hdashline
+C                         & Cost                                           \\\hdashline
+S                         & Schedule                                       \\\hdashline
+L                         & Legislation                                   \\\hdashline
+R                         & Available resources                            \\\hdashline
+ENV                       & Environmental conditions and footprint         \\\hdashline
+PH                        & Physical characteristics                       \\\hdashline
+OP                        & Operational performance                        \\\hdashline
+PF                        & Flight performance                             \\\hdashline
+VS                        & Vehicle systems                                \\\hdashline
+*                         & Non-critical requirements (stakeholder wishes) \\\hdashline
+\dag                      & Key requirements\tablefootnote{A requirement which is of primary importance for the customer.}                     \\\hdashline
+\ddag                     & Driving requirements\tablefootnote{A requirement that drives that design more than average.}                 \\\hdashline
+x                         & Killer requirements \tablefootnote{A requirement that drives the design to an unacceptable extent.}                 \\\bottomrule
+\end{tabular}
+\end{table}
+%\addtocounter{footnote}{-2}
+%\footnotetext{}
+%\addtocounter{footnote}{1}
+%\footnotetext{}
+%\addtocounter{footnote}{1}
+%\footnotetext{}
+
+\section{Requirements}
+\label{sec:requ}
+The revised requirements are seen in the following list.
+
+\begin{enumerate}[leftmargin =4.5cm, align=parleft, labelwidth=10em]
+    \item[\textbf{SYS-C-1:} \dag \ddag] The production and distributed development cost per unit shall be limited to an amount of 30k Euros.
+    \item[\textbf{SYS-C-2:}] The cost of the UAV support service shall not exceed 5k Euros per year.
+    %\item[\textbf{SYS-C-3:}] The costs of disposal at end-of-life phase shall not  exceed 2.000 Euros.
+    %\item[\textbf{SYS-S-1:}] The production time of one unit shall be limited to one month.
+    \item[\textbf{SYS-S-2:}] The design (up to and including preliminary phase) of the UAV shall be done in 11 weeks.
+    %\item[\textbf{SYS-L-1:}] The UAV shall conform with EASA regulations (Directive 2009/48/EC).
+    \item[\textbf{SYS-L-2:} \dag] The UAV shall notify the operator when 120 m altitude is reached. 
+    \item[\textbf{SYS-L-3:} x ] The UAV shall conform with EASA regulations (A3-Category).\footnote{EASA Regulations received through contact with AVY}
+    \item[\textbf{SYS-R-1:}] The design shall be performed with not more than 10 team members.
+   % \item[\textbf{SYS-RES-2:}] The design of the UAV shall be limited to components that are feasible to manufacture.
+    %\item[\textbf{SYS-ENV-C:}] The UAV shall be able to operate under prior defined critical conditions.
+    %\item[\textbf{SYS-ENV-1.1:} $\ast$ ] The UAV shall be able to operate in smoke with a visibility of 5m or more.
+    %\item[\textbf{SYS-ENV-1.2:} $\ast$ ] The UAV shall be resistant to an exposure of elevated temperature up to 200 degrees Celsius for 20 minutes.
+%    \item[\textbf{SYS-ENV-1.3:} $\ast$ ] The UAV shall be able to operate at rainfall of 7.6 mm of rain per hour (heavy rainfall).
+    \item[\textbf{SYS-ENV-1.4:} $\ast$ ] The UAV shall be able to operate at wind conditions up to 6 on the Beaufort scale.
+    \item[\textbf{SYS-ENV-1.5:}] The UAV shall have resistance against corrosion of safe-life components for its entire planned lifetime.
+    \item[\textbf{SYS-ENV-1.6:} $\ast$ ] The UAV shall be able to operate nominally in temperatures ranging from -30 to +40 degrees Celsius.
+    %\item[\textbf{SYS-ENV-1.7:} $\ast$ ] The UAV shall be able to endure storage temperatures ranging from +5 to +30 degrees Celsius.
+    \item[\textbf{SYS-ENV-2.1:} \dag] The UAV shall not produce any carbon emissions during operation. 
+    \item[\textbf{SYS-ENV-2.2:}] The UAV noise emission shall not exceed a limit of 68 dB.
+    %\item[\textbf{SYS-ENV-2.3:}] The UAV shall not require any maintenance substances (i.e. paints, lubricants and anti-icing sprays) which are environmentally damaging and have an environmental impact neutral alternative.
+    \item[\textbf{SYS-ENV-2.5:}] During production no substances harmful to the environment shall be used as prescribed by EU legislation.
+    %\item[\textbf{SYS-ENV-2.6:}] The UAV's energy source shall be ENTER SOMETHING HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+%\item[\textbf{SYS-PH-1.1:}] The UAV shall have maximum dimensions of <tbd>.    
+    \item[\textbf{SYS-PH-1.1:} \ddag] The combined UAV and support equipment shall occupy a maximum volume of 1.7 x 1.2 x 1.4 meters. 
+    \item[\textbf{SYS-PH-1.2:} \dag] The UAV shall have a payload bay volume of 100 x 15 x 15 cm.    \item[\textbf{SYS-PH-2:} x ] The UAV shall have a MTOW of maximum 25 kg.
+    %\item[\textbf{SYS-PH-2:}] The UAV shall not weigh more than 150 kg.
+    %\item[\textbf{SYS-PH-3:}] The UAV shall have an appearance that satisfies the customer's preferences. 
+    %\item[\textbf{SYS-PH-4.1:}] The UAV shall not fail under the loads generated under normal operating conditions.
+    %\item[\textbf{SYS-PH-4.2:}] The UAV structure shall not enter into resonance under the influence of the propulsion system.
+    \item[\textbf{SYS-PH-4.3:}] The UAV shall have no single point of failure.
+    \item[\textbf{SYS-PH-4.4:}] The UAV shall sustain accelerations from -1g up to +3g’s.
+
+%\item[\textbf{SYS-OP-1.1:}] The UAV shall facilitate the payload with conditions to perform its mission.
+%    \item[\textbf{SYS-OP-PB-1.1}:] The UAV shall be able to carry supplies.
+    \item[\textbf{SYS-OP-1.1:}] The UAV shall be able to airdrop its payload during operation.
+%    \item[\textbf{SYS-OP-1.1.2:}] The UAV shall be able to carry an organ transplant package of 10 kg maximum.
+    %\item[\textbf{SYS-OP-1.2:}] The UAV shall not damage the payload under normal operating conditions.
+    %\item[\textbf{SYS-OP-1.3:} $\ast$ ] The internal temperature of the UAV's payload bay shall not exceed 30 degrees Celsius under normal operating conditions. 
+ %   \item[\textbf{SYS-OP-1.4:}] The UAV payload bay shall have universal and specific attachment systems for different types of payload.
+   % \item[\textbf{SYS-OP-1.4:} $\ast$ ] The payload bay shall provide protection from external conditions.
+    \item[\textbf{SYS-OP-1.5:} $\ast$ ] The payload bay shall provide a connection to the power storage.
+    %\item[\textbf{SYS-OP-1.6.1:}] The payload bay shall limit the vibrations exerted on the payload to frequencies ranging from <tbd> to <tbd> Hertz. 
+    %\item[\textbf{SYS-OP-1.6.2}] The payload bay shall limit vibrations exerted on the payload to a maximum amplitude of 1 mm.
+    \item[\textbf{SYS-OP-1.7:} $\ast$ ] The UAV payload bay shall allow for payload mounting with basic tooling.
+    %\item[\textbf{SYS-OP-1.8:}] The UAV payload bay shall ensure that the payload does not damage the UAV under normal operating conditions.
+    
+    \item[\textbf{SYS-OP-2.1:}] The UAV shall have an operational life of at least 1500 flying hours.
+    %\item[\textbf{SYS-OP-2.2:}] The UAV system shall ensure sustainable disposability as dictated by <section in the baseline report>.
+    \item[\textbf{SYS-OP-2.2:}] The UAV shall perform missions with a reliability of at least 75\%.
+    \item[\textbf{SYS-OP-2.3:} ] The UAV shall be constructed with off-the-shelf electrical components.
+    \item[\textbf{SYS-OP-2.4:} $\ast$ ] UAV fail-safe components shall not require specialised skills to be replaced.
+    %\item[\textbf{SYS-OP-2.6:}] The UAV shall not cause any damage.
+    %\item[\textbf{SYS-OP-2.5.1:}] The UAV shall be able to avoid collisions with other objects autonomously.
+    %\item[\textbf{SYS-OP-2.5.2:}] The UAV shall contain an equivalent to an ADS-B safety communication system.
+    \item[\textbf{SYS-OP-2.5.3:}] The UAV shall avoid collisions with other aircraft autonomously.
+    \item[\textbf{SYS-OP-2.5.4:}] The UAV shall be able to avoid collisions with birds autonomously.
+    \item[\textbf{SYS-OP-2.5.5:}] The UAV shall avoid collisions with ground objects autonomously.
+    %\item[\textbf{SYS-OP-2.7}:] The UAV shall have an assembly time of less than 15 minutes.
+    %\item[\textbf{SYS-OP-2.8}:] The assembly of the UAV shall not require specialised skills.
+    %\item[\textbf{SYS-OP-2.6:} $\ast$ ] The UAV energy source shall be accessible using off-the-shelf tooling.
+    \item[\textbf{SYS-OP-2.7:}] The UAV shall be able to operate in night conditions.
+    %\item[\textbf{SYS-OP-2.8.1:} $\ast$ ] The UAV shall have a energy source that can be replaced within 5 minutes with off-the-shelf tooling.
+    \item[\textbf{SYS-OP-2.8.2:} $\ast$ ] The UAV shall have a maximum turnaround time of 20 minutes.
+    %\item[\textbf{SYS-OP-2.8.3:} $\ast$ ] The UAV pre-flight preparations shall be performed one person.
+    %\item[\textbf{SYS-OP-2.8.4:} $\ast$ ] The UAV pre-flight preparations shall not require special skills.
+    %\item[\textbf{SYS-OP-2.8.5:} $\ast$ ] The UAV post-flight inspection shall be performed by one person.
+    \item[\textbf{SYS-OP-2.8.6:} $\ast$ ] The transport of the UAV shall require two persons.
+    \item[\textbf{SYS-OP-2.8.7:} $\ast$ ] The in-flight operation of the UAV shall be performed by one person.
+    \item[\textbf{SYS-OP-2.8.8:} $\ast$ ] The UAV energy source shall be replaceable within 5 minutes.
+    %\item[\textbf{SYS-OP-2.8.9:} $\ast$ ] The UAV shall have an energy source that can be replaced with off-the-shelf tooling.
+    %\item[\textbf{SYS-OP-2.9.1:}] The UAV shall have an installed operational safe-mode.
+    \item[\textbf{SYS-OP-2.9.2:}] The safe mode of the UAV shall have a return-to-base function.
+    \item[\textbf{SYS-OP-2.9.3:}] The safe mode of the UAV shall contain an autonomous emergency landing function.
+    \item[\textbf{SYS-OP-2.9.4:}] The safe mode of the UAV shall be able to send a distress signal to the UAV operator, in case of an emergency.
+    \item[\textbf{SYS-PF-1.1:} \ddag] The UAV shall be able to carry a payload of at least 10 kg.
+	\item[\textbf{SYS-PF-1.2:} \ddag] The UAV shall be able to fly at a horizontal velocity of at least 200 km/h at cruise altitude carrying 10kg of payload.
+	\item[\textbf{SYS-PF-1.3:} \dag] The UAV shall have a minimum range of 200 km carrying 10kg of payload.
+	\item[\textbf{SYS-PF-1.4:}] The UAV shall have a minimum endurance of 1 hour carrying 10kg of payload.
+	\item[\textbf{SYS-PF-2.1:} \dag \ddag] The UAV shall be capable of vertical take-off.
+	\item[\textbf{SYS-PF-2.2:} \dag \ddag] The UAV shall be capable of vertical landing.
+	\item[\textbf{SYS-PF-2.3:}] The UAV shall hover for a minimum of 5 minutes carrying 10 kg of payload.
+	\item[\textbf{SYS-PF-2.4:}] The UAV shall have a climb speed of at least 4 m/s.
+    \item[\textbf{SYS-PF-3:}] The UAV shall be controllable in all flight conditions.
+	\item[\textbf{SYS-PF-4:}] The UAV shall be longitudinally, directionally and laterally stable during operation.
+    \item[\textbf{SYS-VS-1.1:}] The UAV shall be remotely controllable within visual line of sight.
+	%\item[\textbf{SYS-VS-1.2:}] The UAV shall be able to be converted to operate autonomously.	
+    \item[\textbf{SYS-VS-1.2.1:}] The UAV shall be able to navigate  autonomously.
+    \item[\textbf{SYS-VS-1.2.2:}] The UAV shall be able to manoeuvre autonomously.
+    \item[\textbf{SYS-VS-1.2.3:}] The UAV shall be able to land autonomously.
+    \item[\textbf{SYS-VS-1.2.4:}] The UAV shall be able to take-off autonomously.
+	\item[\textbf{SYS-VS-2.1:}] The UAV shall communicate with a ground station continuously.
+	\item[\textbf{SYS-VS-2.2:}] The UAV shall communicate with other air vehicles within a 1000 m radius.
+	\item[\textbf{SYS-VS-2.3:}] The UAV shall communicate the current flight conditions to the pilot.
+	%\item[\textbf{SYS-VS-2.4:} $\ast$ ] The payload bay shall provide a data link interface from the payload to the UAV communication system.
+	%\item[\textbf{SYS-SYS-3.1:}] The UAV shall have an energy storage capacity of at least <tbd> Ah.
+	\item[\textbf{SYS-VS-3:}] The UAV shall have electrical propulsion.
+\end{enumerate}
+
+As seen above, requirements SYS-L-3 and SYS-PH-2 were regarded as killer requirements due to the fact that a range of 200km or an endurance of one hour is not achievable with a MTOW of 25kg. Not meeting requirement SYS-L-3 would make it illegal to operate the UAV in Europe unless it were to be classified as a civil aircraft leading to much greater legislation costs exceeding the budget. The solution yielding a useful product was found in the form of exchanging payload capacity with additional energy storage. The direct consequence is the need for the change of requirements SYS-PF-1.3 and SYS-PF-1.4 which state that the UAV shall be able to have the maximum range and endurance while carrying a payload mass of 10kg The redefined requirements are as follows:\\
+
+\noindent \textbf{SYS-PF-1.3R:} The UAV shall have a minimum range of 200 km.\\
+
+\noindent \textbf{SYS-PF-1.4R:} The  UAV  shall  have  a  minimum  endurance  of  1  hour.\\
+
+By removing the minimum payload capacity limitations, the killer requirements are effectively eliminated.

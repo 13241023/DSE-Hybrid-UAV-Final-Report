@@ -1,7 +1,243 @@
-\chapter{Power and Propulsion}
+\chapter{Power \& Propulsion}
 \setlength{\parindent}{15pt}
 \label{ch:powe_prop}
 
-\section{Electrical Block Diagram}
-\label{sec:elec_bloc_diag}
+\section{Design Approach}
+\label{sec:DAPNP}
+% include WFD
 
+\autoref{fig:wfdpnp} shows the Work Flow Diagram of the design process executed by the Power \& Propulsion department. It included both the design of the motor with propellers, as the power source with power distribution system. 
+
+The design process starts with the propulsion unit designed, after that the power unit is designed. This approach is chosen since it is more convenient to first select the right motors and afterwards come up with a corresponding battery unit. The first design block, indicated with a blue shade in \autoref{fig:wfdpnp}, covers the design approach of the propulsion unit: the motor with propellers. 
+
+\subsection*{Propulsion Unit Design Approach}
+The first step in that design block is the defining of the propulsion configuration; this means determining the number of motors and their mounting location. An analysis was done for a number of motors ranging from three to five. Also different locations were analysed, such as wing and body mounted. After the determination of the number of motors with their corresponding location, the kind of motor was chosen. Requirement SYS-VS-3 states that the UAV shall have electrical propulsion. Although propulsion type was constrained, motor type still had to be decided on; a choice had to be made between brushed and brushless motors. This was done by comparing the advantages and disadvantages of both motor types in a qualitative way.
+
+%%Explain what needs to be why analysed! 
+For the propulsion unit performance, the following analysis approach was applied.
+
+1) high-velocity requirement SYS-PF-1.2 is a driving requirement. This means we first need to ensure this performance characteristics. The most important design aspect to attain this 200km/h is the propeller design; a high pitch is required. 
+
+\begin{comment}
+For analysis
+
+show a pitch of 14 inch is needed. The approximated flight speed of this propeller with the max. RPM is:
+
+\begin{equation*}
+    14*0.0254* \frac{9302}{60} = 55.13 m/s
+\end{equation*}
+
+A propeller with this propeller in combination with this RPM will enable the UAV flight the required 200km/h.
+
+\end{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\paragraph{Thrust Calculations VTOL:} For the right motor choice, a python tool was developed that gives the maximum thrust output in VTOL as function of the maximum power output ($P_{max}$) and area of the propeller ($A_{prop}$). The right motor was found in an iterative way; different motor specifications were used as input to see if the required output was met. For the development of this tool, the conservation of momentum in helicopter climb/hover theory was used\footnote{\url{http://s6.aeromech.usyd.edu.au/aerodynamics/index.php/sample-page/aircraft-performance/hoverclimbdescent-analysis/}, Accessed 19-06-2017}. The equation for required thrust for hovering and climb are shown in \autoref{eq:hc}
+
+\begin{equation}
+\label{eq:hc}
+    T_{total,req} = (2 \rho A P_{req}^{2})^{\frac{1}{3}}
+\end{equation}
+
+The required thrust value was provided by the Control \& Stability. This maximum value was computed with the extreme values for the c.g. position. For instance, with the most aft c.g. position, the aft motors have to provide a significant higher thrust levels. Furthermore, also a margin had to be taken into account for the case a motor has to stabilise an incoming gust; during hovering the thrust setting should not exceed 75\% for instance to still have margin to correct disturbances.\\
+
+\paragraph{Thrust \& Power Calculations for Horizontal Flight Phase:} For the horizontal flight phase, only the aft motors are operative, they deliver thrust while the propellers on the front motor are folded (feathering mode). 
+
+First the required power in horizontal flight was evaluated by means of a python tool. This was done by computing the drag at maximum airspeed and multiplying this by the flight velocity. The following equation for required power for high-velocity cruise flight was derived\footnote{\url{http://nptel.ac.in/courses/101104007/Module2/Lec6.pdf}, Accessed 09-06-2017}. This was obtained by replacing $C_{L}$ by the weight divided by the dynamic pressure (q) and surface (S):
+\begin{equation*}
+    P_{req} = D V = C_{D} q S V = (C_{D_{0}} + \frac{C_{L}^{2}}{\pi AR e}) q S V
+\end{equation*}
+
+\begin{equation}
+    P_{req} = \frac{1}{2} \rho V^{3} S C_{D_{0}} + \frac{\frac{W^{2}}{\frac{1}{2} \rho V S}}{\pi AR e}
+\end{equation}
+
+
+If all four motors would contribute, the chosen configuration would create propeller wash phenomena since the motors are aligned in longitudinal direction. This might influence the performance of the aft propeller. Furthermore, there is also a strongly relation to propeller performance: \\
+
+4) Required Thrust and power horizontal flight
+5) Propeller design
+
+The performance of the propellers is very sensitive for the operational regime; away from the design point, the propeller performs poorly. Propellers are designed for specific conditions. 
+
+In the design of this UAV, the propellers have to provide propulsion both in VTOL mode and in high-velocity cruise flight
+
+VTOL: which is low velocity with high required thrust
+
+High-velocity horizontal flight: which means lower required thrust but high velocity. This will result in a significantly high required RPM and propeller pitch, with a low desired propeller area
+
+%%---------DONE TO HERE------%%
+
+
+This means, the aft motors are optimised for horizontal flight, since their function is to sustain the UAV in horizontal phase.
+
+How to do hybrid operations with the same props????? Solutions:
+
+- By optimising the front ones for VTOL and make them the main VTOL contributors, the aft motors are optimised for horizontal operations. In this way they can assist partly in the VTOL phase and serve as main contributor to the horizontal flight phase. 
+COOLTOOL!!! 
+
+
+\subsection{Power Subsystem Design Approach*}
+
+
+
+\section{Assumptions}
+\label{sec:AssuPNP}
+
+\begin{itemize}
+    \item Assumption 1
+\end{itemize}
+
+\section{Analysis} %% MUST BE REVISED !!!!!
+\label{sec:AnalPNP}
+This analysis contains the design steps taken in the process of designing a propulsion and power system that meets the prior set requirements. This also explains the subdivision of this section into a motor and propeller part (propulsion) and an energy source subsection (Power).
+
+\subsection{Motor and Propellers}
+
+\paragraph{Motor configuration:} Different amount of motors with corresponding locations were analysed. The different locations are leading edge mounted, wing mounted quadcopter setting and body mounted. The amount of motors varied from three to five. The analysed configurations can bee seen in \autoref{fig:motorconfig}.
+
+% Include figure with mounting positions and diff. amount of motors.
+
+\begin{itemize}
+    \item \textbf{Three motors:} After consulting the Control \& Stability department, three motors was not considered an option since it does not create sufficient controllability in VTOL operations.
+    \item \textbf{Four motors:} After calculations, an amount of four motors turned out to be sufficient to meet both the required thrust and power output in VTOL and in high-velocity cruise. After consulting with Control \& Stability, wing quadcopter setting was chosen over body mounted configuration; the greater moment arm increases the effectiveness of the motors in VTOL stability. 
+    \item \textbf{Five motors:} This was regarded as an solution to the later discussed problems with the propeller design. However, a fifth relatively heavy horizontal flight sustainer would cause conflicts with both the cost and mass budget. 
+\end{itemize}
+
+\paragraph{Motor Types} There are two kind of motors; brushed or brushless. Brushed motors have the disadvantage of a relative lower efficiency. However, the cost for these motors is considerably lower. Brushless on the other hand, have a higher cost, but their efficiency is higher. The cost increase can be covered by the budget, the increased efficiency is regarded dominant over the cost increase. Therefore there is chosen for a brushed motor. Upon recommendation of ATMOS, there was chosen to use the catalogue of Hacker-motors\footnote{\url{https://www.hacker-motor-shop.com/}, Accessed 19-06-2017}.\\
+%% ELABORATE AND CONNECT TO THE TABLE!!!!! AND EXPLAIN OUTCOME!!!
+\begin{table}[H]
+    \centering
+    \caption{Brushed vs. Brushless analysis}
+    \label{tab:bbanal}
+    \begin{tabular}{m{3cm}>{\centering}m{2cm}>{\centering}m{2cm}m{7cm}}
+        \toprule        \textbf{}                                      & \centering\textbf{Brushed} & \centering\textbf{Brushless} & \textbf{Note}                                                                                                                                                                                                                           \\ \midrule
+        \textbf{Efficiency}                            &                  & \cmark             & Brushed ranges from 75\% - 80\% in contrast to brushless, which ranges from 85\% - 90\%.\footnote{\url{https://quantumdevices.wordpress.com/2010/08/27/brushless-motors-vs-brush-motors-whats-the-difference/}, Accessed 20-06-2017} \\ \hdashline
+        \textbf{Cost}                                  & \cmark           &                    & Brushed motors are typically lower in cost due to the simplicity and established production techniques\cite{wp}.                                                                                                                      \\\hdashline
+        \textbf{Velocity Range}            &                  & \cmark             & Brushless motors typically generate higher RPM and torque meaning it can operate with the higher pitched propeller. The combination of a high pitch and RPM enable higher velocity range for the brushless motor\cite{dae}.                       \\\hdashline
+        \textbf{Reliability}                           &                  & \cmark             & Brushless motors have less part can potentially break of wear-out\footnote{\url{http://www.nmbtc.com/brushless-dc-motors/why-brushless-motors/}, Accessed 20-06-2017}.                                                               \\\hdashline
+        \textbf{Environmental Resistance} & \cmark           &                    & Due to the brushed motors simpilicity, they can deal with environments that are more hostile towards electronics and motor components\cite{dae}.                                                                                                  \\\hdashline
+        \textbf{Noise Emission}                      &                  & \cmark             & Brushless motors create less noise emissions due to completely enclosure of internal components\footnote{\url{http://www.nmbtc.com/brushless-dc-motors/why-brushless-motors/}, Accessed 20-06-2017}.                                  \\ \bottomrule
+    \end{tabular}
+\end{table}
+If all four motors would contribute, the chosen configuration would create propeller wash phenomena since the motors are aligned in longitudinal direction. This might influence the performance of the aft propeller. Furthermore, there is also a strongly relation to propeller performance: \\
+
+\paragraph{Propeller performance:}
+The performance of the propellers is very sensitive for the operational regime; away from the design point, the propeller performs poorly. Propellers are designed for specific conditions. 
+
+In the design of this UAV, the propellers have to provide propulsion both in VTOL mode and in high-velocity cruise flight
+
+VTOL: which is low velocity with high required thrust
+
+High-velocity horizontal flight: which means lower required thrust but high velocity. This will result in a significantly high required RPM and propeller pitch, with a low desired propeller area
+
+%%---------DONE TO HERE------%%
+
+
+This means, the aft motors are optimised for horizontal flight, since their function is to sustain the UAV in horizontal phase.
+
+How to do hybrid operations with the same props????? Solutions:
+
+- By optimising the front ones for VTOL and make them the main VTOL contributors, the aft motors are optimised for horizontal operations. In this way they can assist partly in the VTOL phase and serve as main contributor to the horizontal flight phase. 
+COOLTOOL!!! 
+
+
+
+\subsection{Energy Source}
+
+3) Power:
+- Battery that sustain the motors (VTOL, high-speed) and all the other subsystem (Look into the C-rating, discharge value.);
+- Cable harness (layout, mass estimation, regard accessibility and Assembly capabilities);
+- Electrical component and circuits design.
+
+\section{Verification \& Validation}
+\label{sec:VNVPNP}
+
+\section{Results}
+\label{sec:RPNP}
+
+- 4 motors; 2 types of motors with corresponding propellers.
+
+All four are used for the VTOL phase. only  the aft motors are used as pushers for the horizontal cruise phase
+
+- two front: Q60-2M, Aeronaut CAM Carbon 16x10
+- two aft: A50-12L, APC 11x14
+
+
+%fix the centering issue
+
+\begin{table}[H]
+\centering
+\caption{Off-the-shelf component choice Power \& propulsion subsystems}
+\label{PNPresults}
+    \begin{tabular}{m{3cm}m{3.2cm}m{0.6cm}m{2.64cm}m{2.64cm}}
+    \toprule
+    \textbf{Component}                   & \textbf{Product Name}                                                     & \textbf{Q.} & \textbf{Unit Mass {[g]}} & \textbf{Unit Cost{[\euro]}} \\ \midrule
+    \textbf{Front Motor}        & Hacker Q60-7M                                                             & 2           & 520                        & 410                      \\\hdashline
+    \textbf{Front Propeller}    & AC Carbon 16x10                                                           & 2           & 25                         & 11.8                      \\\hdashline
+    \textbf{Front Speed Controller} & MasterSPIN 99 Pro                                                         & 2           & 105                        & 229                      \\\hdashline
+    \textbf{Aft Motor}          & Hacker A50-12L                                                            & 2           & 445                        & 184                      \\\hdashline
+    \textbf{Aft Propeller}      & APC 11x14                                                                 & 2           & 40                         & 3.50                       \\\hdashline
+    \textbf{Aft Speed Controller}   & X-70-SB                                                                   & 2           & 54                         & 99                       \\\hdashline
+    \textbf{DC/DC Converter}    & ...                                                                       & 2           & ...                        & ...                        \\\hdashline
+    \textbf{Rotating Mechanism}     & ...                                                                       & 4           & ...                        & ...                        \\\hdashline
+    \textbf{Servo}              & ...                                                                       & 4           & ...                        & ...                        \\\hdashline
+    \textbf{Battery}            & Zippy Compact 5800mAh 10s Lipo                                            & 6           & 1283                       & 80.55
+    \\\hdashline
+    \textbf{Cabling}            & Turnigy HQ 8 AWG Silicon wire                                             & -           & 120 /m                     & 3.50 /m                 \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\begin{comment}
+Recommandations???
+
+4) Optional: look into other propulsion types (break with electric prop. requirement):
+- Electric VS. Combustion
+- Electric VS. Hybrid propulsion
+\end{comment}

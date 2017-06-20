@@ -4,6 +4,7 @@
 %\\\\\\\\\\\Document Properties\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \documentclass[11pt,a4paper,reqno,titlepage,twoside,openright]{report} %twoside,openright together forces a new chapter to begin on a right side
+\raggedbottom
 \usepackage[margin=6pc]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts}
@@ -36,6 +37,8 @@
 \usepackage{longtable}
 \usepackage[table]{xcolor} %Adding colors to table cells
 \usepackage{adjustbox} %Shrinking table sizes so tables can fit within in a page
+\usepackage{eurosym}
+\usepackage{pifont} %for checkmarks
 \usepackage{arydshln} %Adding dashlines in arrays \hdashline
 
 
@@ -80,6 +83,7 @@
 \newcolumntype{C}{>{\small\centering\arraybackslash}X} %For tabularX
 \newcolumntype{L}{>{\small\raggedright\arraybackslash}X} %For tabularX
 \newcolumntype{R}{>{\small\raggedleft\arraybackslash}X} %For tabularX
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}} %Allows column width adjustments while maintaining center alignment
 
 %Changes parameters for \hdashline to make the dashes into dots:
 \setlength\dashlinedash{0.2pt}
@@ -126,3 +130,6 @@ sorting=none
 \renewcommand{\sectionautorefname}{Section}
 \renewcommand{\subsectionautorefname}{Section}
 \renewcommand{\subsubsectionautorefname}{Section}
+
+%\\\\\\\\\\\Misc\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\newcommand{\cmark}{\ding{51}}% for checkmark

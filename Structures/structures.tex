@@ -1,0 +1,143 @@
+\chapter{Structural Analysis}
+\setlength{\parindent}{15pt}
+\label{ch:stru_anal}
+
+
+
+%PLEASE ADHERE TO THIS STRUCTURE
+%\section{Design Approach}
+
+%\section{Assumption}
+
+%\section{Analysis}
+
+%\section{Verification \& Validation}
+
+%\section{Results}
+
+\section{Design Approach}
+\label{sec:desi_stru}
+
+
+
+\section{Assumptions}
+\label{sec:assu_stru}
+
+\begin{itemize}
+    \item Stringers are only loaded in bending and axial stress.
+    \item The fuselage frames are loaded purely in shear
+    \item The fuselage skin carries only shear stresses
+\end{itemize}
+
+\section{Analysis}
+\label{sec:anal_stru}
+
+\begin{equation}
+\label{eq:boom}
+    B_{1} = \frac{t_{D}b}{6}\left ( 2+\frac{\sigma _{2}}{\sigma _{1}} \right )
+\end{equation}
+
+\section{Verification \& Validation}
+\label{sec:veri_vali}
+\section{Results}
+\label{sec:resu_stru}
+%%%%%%%%%%% THIS IS THE OLD PAYLOAD CHAPTER COMMENTED OUT FOR NOW %%%%%%%%%%
+\begin{comment}
+In this section, the fuselage and payload compartment design will be explained. First, the layout of the fuselage is presented. Based on this, a stress analysis is made. After that, different options for materials are compared. Finally, all design decisions, based on the previous analysis, are presented.
+
+
+\section{Fuselage Layout}
+\label{sec:fuse_layo}
+Explain general layout of the fuselage, like where the torsion boxes, stringers etc will be located
+
+
+\section{Stress Analysis}
+\label{sec:stre_anal}
+
+
+
+
+\section{Material Analysis}%Written by Steph
+\label{sec:mate_anal}
+
+In this section, an overview is given of different materials that could possibly be used to manufacture the UAV. Some relative qualities are presented for each material option. In \autoref{tab:mate_gene} all materials that contribute to the strength of the structure are given. In \autoref{tab:mate_clos} the possible materials for the payload bay closing system that do not contribute to the stress bearing capacities are compared. The cost is not discussed in these tables, since for the expected quantity of products, fibre reinforced composites can compete with steel\footnotemark.
+\footnotetext{\url{http://msl1.mit.edu/MIB/3.57/LectNotes/gm_tech_composites.pdf}, Accessed 14-06-2017}
+
+
+
+\begin{table}[h]
+    \centering
+    \caption{Overview of material options \cite{material}}
+    \label{tab:mate_gene}
+    \begin{tabularx}{\textwidth}{LCCC}
+    \toprule
+    \textbf{Skin} &  \textbf{Weight [g/$cm^3$] }  & \textbf{Thickness} & \textbf{Tensile strength}
+    \\ \midrule
+    Glass fibre composite    
+    &  2.5 
+    & 
+    & 3.5 - 4.6 GPa\footnotemark
+    \\ \hdashline
+    Carbon fibre composite    & 1.8 & &
+    \\ \hdashline
+    Aluminium       & 2.7  & &
+    \\ \hdashline
+    Steel           & 7.9 & &
+    \\ \hdashline
+    Titanium        & 4.4 & &
+    \\ \hdashline
+    Kevlar          & 1.4 & &
+    \\ \hdashline
+    Wood            & 0.6 & &
+    \\ \hdashline
+    Plastic         & 1.2 & &
+    \\ \hdashline
+    Cloth           & & &
+    \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+\addtocounter{footnote}{2}
+\stepcounter{footnote}\footnotetext{\url{https://www.researchgate.net/publication/265346634_Glass_fiber-reinforced_polymer_composites_-_A_review}, Accessed 14-06-2017} %flass fibre weight
+\stepcounter{footnote}\footnotetext{\url{http://textilelearner.blogspot.nl/2012/09/glass-fiber-composites-properties-of.html}, Accessed 14-06-2017}%glass fibre strength
+
+
+\section{Fuselage Design}
+
+
+\subsection{Fuselage Closing}%Written by Steph
+\label{sec:fuse_clos}
+ADD EXPLANATION ABOUT DIFFERENCE BETWEEN DROPPABLE PAYLOAD AND PAYLOAD THAT IS KEPT ON BOARD AND THEREFORE LOADS CAN BE CARRIED
+
+
+In this section, the closing mechanism of the payload bay is explained. In the midterm report, no intentions were expressed of incorporating such a system \cite{midterm}. However, since for some missions, (part of) the payload will be released from the fuselage, it needs to be possible to close the fuselage to prevent excessive drag. The possibility of closing the fuselage also allows for different payload shapes to be transported without extra packaging.
+
+
+To determine how the system would look, first some brainstorming was done. Different options were swinging doors, sliding doors, a mechanism in which the door would be positioned above the payload, and a roller system. Each of these systems has advantages and disadvantages. In \autoref{tab:fuse_clos_comp}, some of these are listed. 
+
+\begin{table}[h]
+    \centering
+    \caption{Comparison of different fuselage closing mechanisms}
+    \label{tab:fuse_clos_comp}
+    \begin{tabularx}{\textwidth}{>{\small}l L L}
+    \toprule
+    \textbf{System} & \textbf{Negatives} & \textbf{Positives}
+    \\ \midrule
+    Swinging doors & Difficult to transfer stresses, extra connecting mechanism is required. Heavy. Large. &  Closes automatically as payload is dropped.  
+    \\ \hdashline
+    Sliding doors & Difficult to transfer stresses, extra connecting mechanism is required. Heavy. Large. &  Closes automatically as payload is dropped.
+    \\ \hdashline
+    Fall-down door & Heavy. Large. & Can transfer stresses. Closes automatically as payload is dropped. 
+    \\ \hdashline
+    Roller system & Requires an additional rolling system. & Can include bars to transfer stresses. Light as it can be partially made out of fabric. Compact.
+    \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+It was decided that the most important aspect in the design of the closing was the ability to help the rest of the fuselage sustain stresses. This is because if the bottom of the fuselage can not transfer any stresses, the whole design needs to be a lot stronger. Because the roller system is expected to be the lightest and as it enables including bars that can take some stresses, this is the system that will be used for closing the fuselage.
+
+\paragraph{System Layout}
+The closing system will consist of 
+\end{comment}
