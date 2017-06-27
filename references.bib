@@ -7,6 +7,61 @@
 %}
 %%the reference above is an example%%
 
+@Book{callister,
+  title     = {Materials Science and Engineering: An Introduction},
+  publisher = {Wiley},
+  year      = {2006},
+  author    = {William D. Callister},
+  isbn      = {978-0-471-73696-7}
+}
+
+@Book{megson,
+  title     = {Aircraft Structures for Engineering Students (Elsevier Aerospace Engineering)},
+  publisher = {Butterworth-Heinemann},
+  year      = {2012},
+  author    = {T. H. G. Megson},
+  isbn      = {978-0-08-096905-3}
+}
+
+@mastersthesis{costbreakdown,
+  author       = {Jacob Markish}, 
+  title        = {Valuation Techniques for Commercial Aircraft Program Design},
+  school       = {Massachusetts Institute of Technology},
+  year         = 2002,
+  month        = 6
+}
+
+@Book{pure_evil,
+  title     = {Design and Analysis of Composite Structures: With Applications to Aerospace Structures},
+  publisher = {JOHN WILEY \& SONS INC},
+  year      = {2010},
+  author    = {Kassapoglou, Christos},
+  isbn      = {0470972637},
+  date      = {2010-11-11},
+  ean       = {9780470972632},
+  pagetotal = {300},
+  url       = {http://www.ebook.de/de/product/12149189/christos_kassapoglou_design_and_analysis_of_composite_structures_with_applications_to_aerospace_structures.html}
+}
+
+@mastersthesis{verticaltailtaper,
+  author       = {A. P. Hettema}, 
+  title        = {Vertical Tail Desgin},
+  school       = {TU Delft},
+  year         = 2015,
+  month        = 5
+}
+
+@Book{raymer,
+  title     = {Aircraft Design: A Conceptual Approach},
+  publisher = {AIAA},
+  year      = {2013},
+  author    = {Raymer, Daniel P.},
+  isbn      = {1600869114},
+  date      = {2013-01-10},
+  ean       = {9781600869112},
+  url       = {http://www.ebook.de/de/product/19757236/daniel_p_raymer_aircraft_design_a_conceptual_approach.html}
+}
+
 @book{ellipticalmanu,
   author    = {Thomas Knauff}, 
   title     = {The Glider Flying Handbook},
@@ -16,7 +71,7 @@
 }
 
 @manual{SEAD,
-    title = {Lecture 5 - Design for AC longitudinal control},
+    title = {Systems Engineering \& Aerospace Design Lecture 5 - Design for AC longitudinal control},
     author = {G. La Rocca},
     organization = {TU Delft},
     address = {},
@@ -24,12 +79,29 @@
     note = {}
 }
 
+@manual{SEAD_vertical,
+    title = {Systems Engineering \& Aerospace Design EXTRA 1 - design for AC lateral directional control and stability},
+    author = {G. La Rocca},
+    organization = {TU Delft},
+    address = {},
+    year = 2017,
+    note = {}
+}
+
+
 @techreport{midterm,
     author      = {de Jong et al},
     title       = {Midterm Report},
     institution = {TU Delft},
     month       = 5,
     year        = {2017}
+}
+
+@techreport{wash,
+    author      = {Hyeonsoo Yeo and Wayne Johnson},
+    title       = {Performance and Design Investigation of Heavy Lift Tiltrotor with Aerodynamic Interference Effects},
+    institution = {NASA},
+    year        = {2007}
 }
 
 @manual{dseguide,
@@ -70,8 +142,8 @@
 
 @Misc{SE_notes_2006,
   title = {Systems Engineering \& Technical management techniques Lecture Notes part 1},
-  month = {September},
-  year  = {2006},
+  month = 9,
+  year  = {2006}
 }
 
 @manual{lca,
@@ -126,10 +198,81 @@
 
 @misc{naca_series, 
   title        = {The NACA Airfoil Series},
-  note         = {PDF format - http://people.clarkson.edu/~pmarzocc/AE429/The\%20NACA\%20airfoil\%20series.pdf}
+  note         = {PDF format - \url{http://people.clarkson.edu/~pmarzocc/AE429/The\%20NACA\%20airfoil\%20series.pdf}}
 }
 
 @misc{perf, 
   title        = {Range and Endurance Performance},
   note         = {PDF format - http://www.dept.aoe.vt.edu/~lutze/AOE3104/range\&endurance.pdf}
+}
+
+@misc{ansys, 
+  title        = {CFD Meshing with ANSYS Workbench},
+  note         = {PDF format - \url{https://caeai.com/sites/default/files/CFD_Meshing_CAEA.pdf}}
+}
+
+@misc{xflr, 
+  title        = {XFLR5 documentation},
+  note         = {PDF format - \url{https://engineering.purdue.edu/$\thicksim$aerodyn/AAE333/FALL10/HOMEWORKS/HW13/ XFLR5\_v6.01\_Beta\_Win32\%282\%29/Release/Guidelines.pdf}}
+}
+
+%
+@book{ruijgrok,
+  author    = {Ger  J.J. Ruijgrok}, 
+  title     = {Elements of airplane performance},
+  publisher = {Delft Academic Press},
+  year      = 2013,
+  address   = {Leeghwaterstraat 42, 2628 Ca Delft, The Netherlands},
+  edition   = 2,
+  isbn      = {978-9065622327}
+}
+
+@mastersthesis{iter,
+  author       = {Mehfooz ur Rehman}, 
+  title        = {Fast Iterative Methods for the Incompressible Navier-Stokes Equations},
+  school       = {Master of Science (M.Sc.) Systems Engineering, Pakistan Institute of Engineering and Applied Sciences, Quaid-i-Azam University Islamabad, Pakistan},
+  year         = 2009
+}
+
+@misc{airtail, 
+  title        = {Subsonic Aerodynamics ofAirfoils and Wings},
+  note         = {PDF format - \url{http://www.dept.aoe.vt.edu/~mason/Mason_f/ConfigAeroSubFoilWing.pdf}}
+}
+
+@manual{hackerdata,
+  title        = {How to use the Setup-Finder}, 
+  organization = {Hacker Motor},
+  address      = {Schinderstrassl 32 D 84030 Ergolding},
+  note         = {PDF Format - \url{http://www.hacker-motor.com/daten/anleitungen/hacker_antriebstabellen_2.pdf}}
+}
+
+@book{roskam,
+  author    = {Jan Roskam}, 
+  title     = {Airplane Design - Part VI: Preliminary Calculation of Aerodynamic, Thrust and Power Characteristics},
+  publisher = {Roskam Aviation and Engineering Corporation},
+  year      = 1987,
+  address   = {Ottawa. Kansas, 66067}
+}
+
+@misc{xfoil, 
+  title        = {XFOIL: An Analysis and Design System for Low Reynolds Number Airfoils},
+  note         = {PDF format - \url{http://web.mit.edu/drela/Public/papers/xfoil_sv.pdf}}
+}
+
+@misc{USLCI,
+  author       = {Peter Isley}, 
+  title        = {The US Life Cycle Inventory Database},
+  howpublished = {Excel sheet},
+  year         = 2013,
+  note         = {This is an excel sheet}
+}
+
+@techreport{electricity,
+  author       = {EURELECTRIC “Preservation of Resources” Working Group’s
+“Upstream” Sub-Group in collaboration with VGB}, 
+  title        = {Efficiency in electricity generation},
+  institution  = {EURELECTRIC},
+  year         = 2003,
+  address      = {Boulevard de l’Impératrice, 66 – B-1000 Brussels},
+  month        = 7,
 }

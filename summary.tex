@@ -1,6 +1,42 @@
-\chapter*{Summary} 
+\chapter*{Summary} %steph
 \setlength{\parindent}{15pt}
 \label{ch:summ}
+
+The Unmanned Aerial Vehicle (UAV) market is growing, as the field of application becomes increasingly diverse\footnote{\url{http://www.businessinsider.com/uav-or-commercial-drone-market-forecast-2015-2?international=true&r=US&IR=T}, Accessed 22-05-2017}. New technologies such as improved lithium batteries allow UAVs to be designed lighter and smaller, or to increase their performance. A large number of missions are either dull, dirty or dangerous for manned aircraft, and are therefore better executed by UAVs instead. Besides that, the use of UAVs is cheaper than manned flight.
+
+The spectrum of missions that can be performed by UAVs is broad. On the one hand, small and inexpensive UAVs are used by consumers and companies alike. On the other side of the spectrum, very large military UAVs are used, which have intercontinental range and an endurance in the order of days. Many missions require operation without extensive facilities such as a runway, while also achieving high-speed (in the order of 300 km/h) flight. This is why a Hybrid UAV, which is capable of vertical take-off and landing (VTOL), as well as horizontal flight, would be very useful. It could be operated from virtually anywhere as it does not require a runway, while keeping the flight performance of a conventional aircraft.
+\nomenclature[A]{VTOL}{Vertical Take-off and Landing}
+\nomenclature[A]{UAV}{Unmanned Aerial Vehicle}
+
+
+
+In this report, the preliminary design of a Hybrid UAV is made, keeping in mind a number of driving requirements. A Winged Quadcopter layout turned out to be the most promising. Therefore, it was chosen as the configuration for the high velocity, low weight (due to European Aviation Safety Agency (EASA) regulations) and VTOL requirements. The layout of the preliminary design is as follows: 
+
+\nomenclature[A]{EASA}{European Aviation Safety Agency}
+
+
+
+
+
+\begin{itemize}
+    \item The propulsion system consists of two motors at the leading edge of the wing which are only used for VTOL and hovering. The other two different motors, located at the aft side of the wing, are used as pushers for the horizontal cruise phase and during VTOL and hovering. The propellers will be powered by lithium-ion batteries.
+    \item The wing is designed such that an elliptical lift distribution is approached. This is done by varying the taper over the wing span, which is 2.92 m. A NACA 4417 airfoil is used. The wings will be made out of foam, with carbon-epoxy tubes running through them to carry the loads. Ailerons provide roll control. %say where the wings are placed 
+    \item The fuselage consists of a partly cylindrical tube that is elliptical towards the front where the wings are placed. On the bottom, it is flat. The payload bay will be open and is also accessible from the bottom.%The fuselage has a tail. 
+    The fuselage will be made out of glass-fibre epoxy composite.  %add fuselage material, shape
+    \item The horizontal tailplane will have an elliptical planform. The tail will be made out of the same material as the wing. The tail is used to provide stability. To provide pitch and yaw control, a rudder and an elevator are installed on the tail.
+    \item For command and data handling, an off-the-shelf Pixhawk flight control module is combined with extra sensors and Paparazzi open-source software. A FrySky remote control is used to manually control the UAV, together with a cellular connection to transmit data. In the future the Paparazzi software is used to fly autonomously beyond visual line of sight.
+    \item Through the use of modular payloads, the UAV will be able to gain mission-specific advantages. Payloads can be released partially from the fuselage, making use of a fuselage-closing payload module to reduce drag. All payloads can be connected to the on-board computer.
+\end{itemize}
+
+After the design phase comes the production phase of the UAV.  %Mention production plan here.
+It is estimated that this Hybrid UAV can take up a market share selling around 500 units. After a product has been sold, it can start its operating life. During the life, operational will be safe since the design is such that either failures are not critical, for example because of redundancy measures. Regular maintenance takes place according to the maintenance guidelines. At the end of the life of the UAV, as many components as possible will be recycled for sustainability.
+
+
+
+
+
+
+ 
 
 
 

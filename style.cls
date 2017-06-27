@@ -67,6 +67,7 @@
 \newcommand{\nomunit}[1]{%
 	\renewcommand{\nomentryend}{\hspace*{\fill}[#1]}}
 
+
 %Renames Nomenclature to List of Symbols
 \renewcommand{\nomname}{List of Symbols}
 

@@ -2,36 +2,36 @@
 \setlength{\parindent}{15pt}
 \label{ch:tech_requ}
 
-System requirements describe the system in terms of constraints and functions, and they guide the design such that the final product meets the expectations of the stakeholders. Therefore they allow to gain insight into the basis for the design choices that have been made so far.
+System requirements describe the system in terms of constraints and functions, and guide the design such that the final product meets the expectations of the stakeholders. Therefore they allow to gain insight into the basis for the design choices that have been made so far.
 
 This chapter presents the system requirements for the Hybrid UAV. The requirement coding is explained in \autoref{sec:lege} and the requirements themselves are listed in \autoref{sec:requ}. At the end of this section, requirements which currently make it impossible to complete the project within the set constraints are mentioned, and their revision is briefly justified.
 
 \section{Legend}
 \label{sec:lege}
 
-\autoref{tab:lege} presents the legend explaining the meaning of the requirement coding.
+\autoref{tab:requ_code_lege} presents the legend explaining the meaning of the requirement coding.
 
 \begin{table}[h]
 \centering
 \caption{Requirements Coding Legend}
-\label{tab:lege}
+\label{tab:requ_code_lege}
 \begin{tabular}{ll}
 \toprule
-\textbf{Requirement Code} & \textbf{Related to:}                       \\\midrule
-SYS                       & System                                         \\\hdashline
-C                         & Cost                                           \\\hdashline
-S                         & Schedule                                       \\\hdashline
-L                         & Legislation                                   \\\hdashline
-R                         & Available resources                            \\\hdashline
-ENV                       & Environmental conditions and footprint         \\\hdashline
-PH                        & Physical characteristics                       \\\hdashline
-OP                        & Operational performance                        \\\hdashline
-PF                        & Flight performance                             \\\hdashline
-VS                        & Vehicle systems                                \\\hdashline
-*                         & Non-critical requirements (stakeholder wishes) \\\hdashline
-\dag                      & Key requirements\tablefootnote{A requirement which is of primary importance for the customer.}                     \\\hdashline
-\ddag                     & Driving requirements\tablefootnote{A requirement that drives that design more than average.}                 \\\hdashline
-x                         & Killer requirements \tablefootnote{A requirement that drives the design to an unacceptable extent.}                 \\\bottomrule
+\textbf{Requirement Code} & \textbf{Related to}                       \\\midrule
+SYS                       & \textbf{Sys}tem                                         \\\hdashline
+C                         & \textbf{C}ost                                           \\\hdashline
+S                         & \textbf{S}chedule                                       \\\hdashline
+L                         & \textbf{L}egislation                                   \\\hdashline
+R                         & Available \textbf{R}esources                            \\\hdashline
+ENV                       & \textbf{Env}ironmental Conditions and Footprint         \\\hdashline
+PH                        & \textbf{Ph}ysical Characteristics                       \\\hdashline
+OP                        & \textbf{O}perational \textbf{P}erformance                        \\\hdashline
+PF                        & \textbf{P}erformance of \textbf{F}light                            \\\hdashline
+VS                        & \textbf{V}ehicle \textbf{S}ystems                                \\\hdashline
+*                         & Non-critical Requirements (stakeholder wishes) \\\hdashline
+\dag                      & Key Requirements\tablefootnote{A requirement which is of primary importance for the customer.}                     \\\hdashline
+\ddag                     & Driving Requirements\tablefootnote{A requirement that dramatically affects the outcome of the design process.}                 \\\hdashline
+x                         & Killer Requirements \tablefootnote{Not meeting such a requirement leads to a product without value to the stakeholders.}                 \\\bottomrule
 \end{tabular}
 \end{table}
 %\addtocounter{footnote}{-2}
@@ -43,16 +43,16 @@ x                         & Killer requirements \tablefootnote{A requirement tha
 
 \section{Requirements}
 \label{sec:requ}
-The revised requirements are seen in the following list.
+The revised requirements can be found in the following list.
 
 \begin{enumerate}[leftmargin =4.5cm, align=parleft, labelwidth=10em]
-    \item[\textbf{SYS-C-1:} \dag \ddag] The production and distributed development cost per unit shall be limited to an amount of 30k Euros.
-    \item[\textbf{SYS-C-2:}] The cost of the UAV support service shall not exceed 5k Euros per year.
+    \item[\textbf{SYS-C-1:} \dag \ddag] The production and distributed development cost per unit shall be limited to an amount of 30k EUR.
+    \item[\textbf{SYS-C-2:}] The cost of the UAV support service shall not exceed 5k EUR per year.
     %\item[\textbf{SYS-C-3:}] The costs of disposal at end-of-life phase shall not  exceed 2.000 Euros.
     %\item[\textbf{SYS-S-1:}] The production time of one unit shall be limited to one month.
     \item[\textbf{SYS-S-2:}] The design (up to and including preliminary phase) of the UAV shall be done in 11 weeks.
     %\item[\textbf{SYS-L-1:}] The UAV shall conform with EASA regulations (Directive 2009/48/EC).
-    \item[\textbf{SYS-L-2:} \dag] The UAV shall notify the operator when 120 m altitude is reached. 
+    \item[\textbf{SYS-L-2:} \dag] The UAV shall notify the operator when an above ground level altitude of 110 m is reached. 
     \item[\textbf{SYS-L-3:} x ] The UAV shall conform with EASA regulations (A3-Category).\footnote{EASA Regulations received through contact with AVY}
     \item[\textbf{SYS-R-1:}] The design shall be performed with not more than 10 team members.
    % \item[\textbf{SYS-RES-2:}] The design of the UAV shall be limited to components that are feasible to manufacture.
@@ -67,17 +67,18 @@ The revised requirements are seen in the following list.
     \item[\textbf{SYS-ENV-2.1:} \dag] The UAV shall not produce any carbon emissions during operation. 
     \item[\textbf{SYS-ENV-2.2:}] The UAV noise emission shall not exceed a limit of 68 dB.
     %\item[\textbf{SYS-ENV-2.3:}] The UAV shall not require any maintenance substances (i.e. paints, lubricants and anti-icing sprays) which are environmentally damaging and have an environmental impact neutral alternative.
-    \item[\textbf{SYS-ENV-2.5:}] During production no substances harmful to the environment shall be used as prescribed by EU legislation.
+    %\item[\textbf{SYS-ENV-2.5:}] During production no substances harmful to the environment shall be used as prescribed by EU legislation.
     %\item[\textbf{SYS-ENV-2.6:}] The UAV's energy source shall be ENTER SOMETHING HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 %\item[\textbf{SYS-PH-1.1:}] The UAV shall have maximum dimensions of <tbd>.    
-    \item[\textbf{SYS-PH-1.1:} \ddag] The combined UAV and support equipment shall occupy a maximum volume of 1.7 x 1.2 x 1.4 meters. 
-    \item[\textbf{SYS-PH-1.2:} \dag] The UAV shall have a payload bay volume of 100 x 15 x 15 cm.    \item[\textbf{SYS-PH-2:} x ] The UAV shall have a MTOW of maximum 25 kg.
+    \item[\textbf{SYS-PH-1.1:} \ddag] The combined UAV and support equipment shall occupy a maximum volume of 2.3 x 1.7 x 1.4 meters. 
+    \item[\textbf{SYS-PH-1.2:} \dag] The UAV shall have a payload bay volume of 100 x 15 x 15 cm.    
+    \item[\textbf{SYS-PH-2:} x ] The UAV shall have a MTOW of maximum 25 kg.
     %\item[\textbf{SYS-PH-2:}] The UAV shall not weigh more than 150 kg.
     %\item[\textbf{SYS-PH-3:}] The UAV shall have an appearance that satisfies the customer's preferences. 
     %\item[\textbf{SYS-PH-4.1:}] The UAV shall not fail under the loads generated under normal operating conditions.
     %\item[\textbf{SYS-PH-4.2:}] The UAV structure shall not enter into resonance under the influence of the propulsion system.
     \item[\textbf{SYS-PH-4.3:}] The UAV shall have no single point of failure.
-    \item[\textbf{SYS-PH-4.4:}] The UAV shall sustain accelerations from -1g up to +3g’s.
+    \item[\textbf{SYS-PH-4.4:}] The UAV shall sustain accelerations from -1g up to +3g.
 
 %\item[\textbf{SYS-OP-1.1:}] The UAV shall facilitate the payload with conditions to perform its mission.
 %    \item[\textbf{SYS-OP-PB-1.1}:] The UAV shall be able to carry supplies.
@@ -122,14 +123,14 @@ The revised requirements are seen in the following list.
     \item[\textbf{SYS-OP-2.9.3:}] The safe mode of the UAV shall contain an autonomous emergency landing function.
     \item[\textbf{SYS-OP-2.9.4:}] The safe mode of the UAV shall be able to send a distress signal to the UAV operator, in case of an emergency.
     \item[\textbf{SYS-PF-1.1:} \ddag] The UAV shall be able to carry a payload of at least 10 kg.
-	\item[\textbf{SYS-PF-1.2:} \ddag] The UAV shall be able to fly at a horizontal velocity of at least 200 km/h at cruise altitude carrying 10kg of payload.
-	\item[\textbf{SYS-PF-1.3:} \dag] The UAV shall have a minimum range of 200 km carrying 10kg of payload.
-	\item[\textbf{SYS-PF-1.4:}] The UAV shall have a minimum endurance of 1 hour carrying 10kg of payload.
+	\item[\textbf{SYS-PF-1.2:} \ddag] The UAV shall be able to fly at a horizontal velocity of at least 200 km/h at cruise altitude carrying 10 kg of payload.
+	\item[\textbf{SYS-PF-1.3:} \dag] The UAV shall have a minimum range of 200 km carrying 10 kg of payload.
+	\item[\textbf{SYS-PF-1.4:}] The UAV shall have a minimum endurance of 1 hour carrying 10 kg of payload.
 	\item[\textbf{SYS-PF-2.1:} \dag \ddag] The UAV shall be capable of vertical take-off.
 	\item[\textbf{SYS-PF-2.2:} \dag \ddag] The UAV shall be capable of vertical landing.
-	\item[\textbf{SYS-PF-2.3:}] The UAV shall hover for a minimum of 5 minutes carrying 10 kg of payload.
+	\item[\textbf{SYS-PF-2.3:}] The UAV shall be able to hover for a minimum of 5 minutes carrying 10 kg of payload.
 	\item[\textbf{SYS-PF-2.4:}] The UAV shall have a climb speed of at least 4 m/s.
-    \item[\textbf{SYS-PF-3:}] The UAV shall be controllable in all flight conditions.
+    \item[\textbf{SYS-PF-3:}] The UAV shall be controllable in all flight conditions when fully operational.
 	\item[\textbf{SYS-PF-4:}] The UAV shall be longitudinally, directionally and laterally stable during operation.
     \item[\textbf{SYS-VS-1.1:}] The UAV shall be remotely controllable within visual line of sight.
 	%\item[\textbf{SYS-VS-1.2:}] The UAV shall be able to be converted to operate autonomously.	
@@ -137,7 +138,7 @@ The revised requirements are seen in the following list.
     \item[\textbf{SYS-VS-1.2.2:}] The UAV shall be able to manoeuvre autonomously.
     \item[\textbf{SYS-VS-1.2.3:}] The UAV shall be able to land autonomously.
     \item[\textbf{SYS-VS-1.2.4:}] The UAV shall be able to take-off autonomously.
-	\item[\textbf{SYS-VS-2.1:}] The UAV shall communicate with a ground station continuously.
+	\item[\textbf{SYS-VS-2.1:}] The UAV shall communicate with a ground station with a minimum frequency of 50HZ.
 	\item[\textbf{SYS-VS-2.2:}] The UAV shall communicate with other air vehicles within a 1000 m radius.
 	\item[\textbf{SYS-VS-2.3:}] The UAV shall communicate the current flight conditions to the pilot.
 	%\item[\textbf{SYS-VS-2.4:} $\ast$ ] The payload bay shall provide a data link interface from the payload to the UAV communication system.
@@ -145,7 +146,7 @@ The revised requirements are seen in the following list.
 	\item[\textbf{SYS-VS-3:}] The UAV shall have electrical propulsion.
 \end{enumerate}
 
-As seen above, requirements SYS-L-3 and SYS-PH-2 were regarded as killer requirements due to the fact that a range of 200km or an endurance of one hour is not achievable with a MTOW of 25kg. Not meeting requirement SYS-L-3 would make it illegal to operate the UAV in Europe unless it were to be classified as a civil aircraft leading to much greater legislation costs exceeding the budget. The solution yielding a useful product was found in the form of exchanging payload capacity with additional energy storage. The direct consequence is the need for the change of requirements SYS-PF-1.3 and SYS-PF-1.4 which state that the UAV shall be able to have the maximum range and endurance while carrying a payload mass of 10kg The redefined requirements are as follows:\\
+As seen above, requirements SYS-L-3 and SYS-PH-2 were regarded as killer requirements due to the fact that a range of 200 km or an endurance of one hour is not achievable with a MTOW of 25 kg and 10 kg of payload. Not meeting requirement SYS-L-3 would make it illegal to operate the UAV in Europe unless it were to be classified as a civil aircraft leading to much greater legislation costs exceeding the budget. The solution yielding a useful product was found in the form of exchanging payload capacity with additional energy storage. The direct consequence is the need for the change of requirements SYS-PF-1.3 and SYS-PF-1.4 which state that the UAV shall be able to have the maximum range and endurance while carrying a payload mass of 10 kg. The redefined requirements are as follows:\\
 
 \noindent \textbf{SYS-PF-1.3R:} The UAV shall have a minimum range of 200 km.\\
 

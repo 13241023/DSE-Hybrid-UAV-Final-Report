@@ -1,43 +1,74 @@
 \chapter{Project Approach}
 \setlength{\parindent}{15pt}
 \label{ch:proj_appr}
+In this chapter, the design process is described and the approach to verification and validation is explained.
 
 \section{Design Process}
 \label{sec:desi_proc}
 %Entire design process, from baseline to final, including iteration process
 
-In the baseline report \cite{baseline} concepts were generated that could deal with the problem on hand. In the midterm report \cite{midterm} a trade-off was performed to see which concept would be the best to do so. Now that a concept is chosen, further detailed design can be done to ensure the requirements can be met. The first step taken into the detailed design was finding out which sub-systems there are. Once the sub-systems
+In the baseline report \cite{baseline}, concepts were generated that could deal with the problem at hand. In the midterm report \cite{midterm}, a trade-off was performed to see which concept would be the best to do so. Now that a concept is chosen, detailed design can be done to ensure that the requirements can be met. 
+
+\subsection{Preparation}
+
+The first step taken in the detailed design phase is finding out which subsystems there are. The subsystems are chosen in such a way that the whole aircraft system is accounted for. Departments are then created which will work on the various subsystems, and each subsystem will have one leading department. The departments and subsystems are shown in \autoref{tab:departments}.
 
 
-coming up with departments which would work on various aspects of the aircraft. In total, five departments were created, which would cover all the aspects. The departments are listed in \autoref{tab:departments}.
-
-\begin{table}[]
+\begin{table}[H]
     \centering
-    \begin{tabular}{c|c}
-    Dep     &  \\
-         & 
-    \end{tabular}
-    \caption{Caption}
-    \label{tab:my_label}
+    \caption{Departments and Responsibilities}
+    \label{tab:departments}
+    \begin{tabularx}{\textwidth}{LLL} 
+    \toprule
+    \bfseries Department     & \bfseries Leading on & \bfseries Working on
+    \\ \midrule
+    Aerodynamics     & Wing & Wing, Tail, Fuselage and Propulsion Unit 
+    \\ \hdashline
+    Command \& Data Handling & Avionics and Ground Control & Payload, Avionics and Ground Station 
+    \\ \hdashline
+    Power \& Propulsion & Propulsion Unit and Power Unit & Propulsion Unit and Power Unit 
+    \\ \hdashline
+    Stability \& Control & Tail & Wing and Tail 
+    \\ \hdashline
+    Structures & Fuselage & Payload, Wing, Tail and Fuselage 
+    \\ \bottomrule
+    \end{tabularx}
 \end{table}
 
-The first step taken into the detailed design was coming up with tools to help aid the design process. One of the major tools that aided the design process was the $N^2$ chart which shows the interrelations between sub-systems, shown in \autoref{sec:subs_inte}.
+\nomenclature[A]{MEW}{Manufacturing Empty Weight}
+
+\subsection{Tools}
+
+The next step taken into the detailed design is coming up with tools to aid the design process. One of the tools that aids the design process is the $N^2$ chart which shows the interrelations between sub-systems, shown in \autoref{sec:subs_inte}. With this chart the different departments know what they need from other departments and which constraints there are. 
+
+Another tool being used is the work flow diagram. Each department will make a work flow diagram to help visualise the design process, showing the steps and iterations required to arrive at an outcome. This way, when a team member is lost, it is possible to look at this diagram to see how to proceed. The work flow diagrams can be seen in each designing chapter. 
+
+The next tool is called the `Master Set'. This tool contains all the up-to-date values and variables of the design, so that there can be no confusion between departments. To make sure that this tool is implemented correctly, only one team member can bring changes to it. When using python for coding, the Master Set is automatically imported when running the code, meaning the newest values are always used. The master set can be seen in \autoref{fig:port_mast_set}. 
+
+To be able to have an overview of what is being done, a smart task division tool has been created. This tool is made in Excel and contains all the work that has to be done. Apart from the work needed to be done, there is also a tab containing all the writing that needs to be in the report, listed to sub-section level detail. Each task has a deadline which changes colour the closer the deadlines approaches. In addition there are columns to indicate who worked on a task, and who is in charge of it (as a contact person). The writing tab shows: the maximum number of pages for each chapter; who wrote which sub-section; who contributed to that sub-section; and which members performed the quality control. On top of all this, a drop down menu was implemented through which each task can be labelled as `Not Started', `In Progress or `Done'. To get an impression of the Task Division tool, it can be seen in \Cref{ch:task_divi}.
+
+When designing, the different departments want to generate the best result according to their principle. This could cause a problem for the cost and mass of the aircraft, and also the amount of energy it needs. To prevent this, budgets are assigned to each subsystem. Each budget has a certain contingency, these are set in place to account for likely increases in mass, energy and cost as the design phase progresses. The budgets and contingencies are explained in \autoref{sec:budg_cont}.
+
+\subsection{Designing}
+
+Now that the preparation is done, the designing can start. Each department will start designing according to their work flow diagram. To start-off the design process, values for the variables are estimated. Once new values are known, they will be updated in the Master Set, so the further calculations will be done with these new values. During the design process a lot of iterations are made due to major design changes or due to changes in these same variables. These changes are updated in the Master Set and explicitly communicated to relevant departments if it implies a substantial change.
 
 \section{Verification \& Validation Procedure}
 \label{sec:veri_vali_proc}
 
-In this section, the verification and validation procedures are analysed and explained. First, in \autoref{sec:verification}, the verification method used for each requirement is illustrated. Then, in \autoref{sec:validation}, validation procedures for different tools, models and the final product are discussed. The actual execution of the verification and validation is not discussed in this section but is documented throughout the report since it is also executed continuously throughout the design phase.
+In this section, the verification and validation procedures are analysed and explained. First, in \autoref{sec:verification}, the verification method used for each requirement is illustrated. Then, in \autoref{sec:validation}, validation procedures for requirements, tools, models, and the final product are discussed. The actual execution of the verification and validation is not discussed in this section but is documented throughout the report since it is also executed continuously throughout the design phase.
 
 \subsection{Verification}%of requirements
 \label{sec:verification}
 
-In order to verify requirements, different methods can be used such as inspecting, analysing, demonstrating or testing. Verifying by inspection means using human senses to verify the requirement. Verification by analysis means verifying by mathematical theorems that the product satisfies the requirement. Verification by demonstration means verifying by operating the UAV under specific conditions to verify that the results are as expected. Verification by tests can be done by checking the compliance of the product with the requirement under representative circumstances. The difference between test and demonstration is that testing requires a more specialised test setup and equipment. \autoref{tab:verification} gives an overview of all of the requirements and the method that can be used to verify them. In this table abbreviations are used: A = analysis, D = demonstration, I = inspection and T = test. 
+In order to verify requirements, different methods can be used such as inspecting, analysing, demonstrating or testing. Verifying by inspection means using human senses to verify the requirement. Verification by analysis means verifying with mathematical theorems to determine whether the product satisfies the requirement. Verification by demonstration means verifying by operating the UAV under specific conditions to verify that the results are as expected. Verification by tests can be done by checking the compliance of the product with the requirement under representative circumstances. The difference between test and demonstration is that testing requires a more specialised test setup and equipment. \autoref{tab:verification} gives an overview of all of the requirements and the method that can be used to verify them. In this table abbreviations are used: A = analysis, D = demonstration, I = inspection and T = test. During the Design Sythesis Exercise (DSE) it is not possible to verify requirements by test, demonstration or inspection. In \autoref{sec:comp_matr} the compliance matrix is presented which summarises the verification of the requirements. 
+\nomenclature[A]{DSE}{Design Synthesis Exercise} 
 
 \begin{table}[htb]
 \centering
 \caption{Requirements Verification Methods}
 \label{tab:verification}
-\begin{tabular}{ll|ll|ll}
+\begin{tabular}{ll :ll:ll}
 \toprule
 \textbf{Requirement} & \textbf{Method} & \textbf{Requirement} & \textbf{Method} & \textbf{Requirement} & \textbf{Method}\\ \midrule
 SYS-C-1                 &A                       &SYS-OP-2.7              &D &SYS-C-2                 &A \\\hdashline                      
@@ -63,45 +94,43 @@ SYS-OP-2.9.5 & T &&&&    \\
 \end{tabular}
 \end{table}
 
-During the DSE it is not possible to verify the requirements by test, demonstration or inspection Therefore, only the requirements that can be verified by analysis are analysed and verified in \autoref{ch:desi_spec}.
+
 
 \subsection{Validation}
 \label{sec:validation}
 
-In this section, the validation methods for the requirements, the tools and models used and the final product are presented.
+In this section, the validation methods for the requirements, the tools and models used, and the final product are presented. 
 
-Prove that all of the requirements are VALID (Verifiable, Achievable, Logical, Integral and  Definitive), has already been performed during their generation. 
+\paragraph{Requirement Validation}
+All system and subsystem requirements are checked and altered in order to be VALID (Verifiable, Achievable, Logical, Integral and Definitive).
 
-Different tools will be used in order to create a model of a system. These include commonly used tools such as for example CATIA, EXCEL, and PYTHON but also less common tools can be used such as XFLR5. The calculation methods of the well known programs are validated by experience since they have been continuously validated by experts in various fields within industries. The less common tools need to be validated by analysis in order to check if they are the correct tools to use for a certain purpose. The inputs given by the user will be validated using inspection, meaning reviewing all the inputs and checking the formulas for typos.
+\paragraph{Tool Validation}
+Different tools will be used in order to create a model of a system. These include commonly used tools such as CATIA, Excel, and Python but also less common tools can be used such as XFLR5. The calculation methods of the well known programs are validated by experience since they have been continuously validated by experts in various fields within industries. The less common tools need to be validated by analysis in order to check if they are the correct tools to use for a certain purpose. The inputs given by the user will be validated using inspection, meaning reviewing all the inputs and checking the formulas for typos.
 
 %experience ---> different input where we know the outputs already (use of same model)
 %comparison ---> use different models or test data to calculated same outputs using same inputs
 
-The model validation will check if the models used to analyse systems and products are the correct models and if they reflect the physical phenomenon as accurately as required. Models can be validated in three different ways: by experience, by analysis and by comparison. Validating a model by experience is checking if the model produces the expected outcome while using various inputs. Validating by analysis means showing that the elements of the model are correct and are correctly integrated. Comparison validation compares the outcome of the model with independent models of proven validity or actual test data. The model validation procedures differ from model to model. The execution of the model validation will be documented in \Cref{ADD CORRECT REFERENCES}. 
+\paragraph{Model Validation}
+The model validation will check if the models used to analyse systems and products are the correct models and if they reflect the physical phenomenon as accurately as required. Models can be validated in three different ways: by experience, by analysis, and by comparison. Validating a model by experience is checking if the model produces the expected outcome while using various inputs. Validating by analysis means showing that the elements of the model are correct and are correctly integrated. Comparison validation compares the outcome of the model with independent models of proven validity or actual test data. The model validation procedures differ from model to model. The execution of the model validation will be documented in \Cref{ch:stab_cont,ch:stru_anal,ch:powe_prop,ch:aero_anal}. 
 
+\paragraph{Product Validation}
 Validation of the product is answering the question if the product accomplishes the intended purpose. In other words, does the product fulfil the Mission Need Statement (MNS). Qualification tests and acceptance tests need to be performed for the system product validation. A stress test and simulations can be used as qualification. Mission scenario tests and operations readiness tests are possible acceptance tests that can be used. Since these tests can only be performed when at least a prototype of the system exits, product validation by analysis needs to take place in this stage of the design. When the product fulfils all the requirements, the product also fulfils the MNS. Hence, the product can be validated by checking if all the requirements are verified. This is documented in \autoref{sec:comp_matr}.
-\nomenclature{MNS}{Mission Need Statement}
+%\nomenclature{MNS}{Mission Need Statement}
 
+
+\begin{comment}
 \section{Sustainable Development Strategy}
 \label{sec:sust_deve_stra}
 
-Life Cycle Assessment (LCA) is chosen to analyse and develop sustainability into the design process and the product. Based on a LCA guide \cite{lca}, a structure of LCA can be represented by \autoref{fig:lcatriangle}. Goal and scope needs to defined as a first step of LCA in order to proceed inventory analysis, impact assessment and improvement assessment. \autoref{fig:lcawheel} shows 6 phases of a product and sustainability of the hybrid UAV will be assessed for each phase.
+Life Cycle Assessment (LCA) is chosen to analyse sustainability of the design. Sustainable development and LCA will be elaborated on in \autoref{ch:susdevlca}.
+
+%i moved most of stuff to the lca chapter, should i write more here? - Bryan
+
+\end{comment}
+
+
 \nomenclature{LCA}{Life Cycle Assessment}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{ProjectApproach/Figures/LCAtriangle.pdf}
-    \caption{Technical Framework for Life Cycle Assessment}
-    \label{fig:lcatriangle}
-\end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{ProjectApproach/Figures/lcadiagram.jpg}
-    \caption{Life Cycle Assessment Wheel}
-    \label{fig:lcawheel}
-\end{figure}
-
-The technical framework and the actual LCA for ????? (WILL BE REPLACED WITH A NAME) will be elaborated in \autoref{ch:life_cycl_asse}.
 
 
